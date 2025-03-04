@@ -5,5 +5,7 @@
     <color name="button">#4EE4C1</color>
     <color name="back_gray">#7C252525</color>
     <color name="invisible">#00252525</color>
-    <color name="orange">#FA7615</color>
+    <color name="background">#101322</color>
+    <color name="orange">#fd511e</color>
+    <color name="darkBlue">#1c213c</color>
 </resources>

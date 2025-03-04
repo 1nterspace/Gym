@@ -31,7 +31,7 @@ class MuscleTypeRWAdapter(private val listener: Listener) :
         private val binding = MuscleTypeCardBinding.bind(itemView)
 
         fun bind(muscleTypeItem: MuscleTypeItem, listener: Listener) {
-            Picasso.get().load(muscleTypeItem.muscleImage).into(binding.imageView)
+            //Picasso.get().load(muscleTypeItem.muscleImage).into(binding.imageView)
             binding.MuscleName.text = muscleTypeItem.muscleName
             itemView.setOnClickListener {
                 listener.obClick(muscleTypeItem)

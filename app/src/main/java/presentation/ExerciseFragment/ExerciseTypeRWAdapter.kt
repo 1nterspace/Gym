@@ -30,7 +30,7 @@ class ExerciseTypeRWAdapter(private val listener: Listener) :
     class ExerciseTypeHolder(view: View) : RecyclerView.ViewHolder(view) {
         private val binding = MuscleTypeCardBinding.bind(itemView)
         fun bind(exerciseTypeItem: ExerciseTypeItem,listener:Listener){
-            Picasso.get().load(exerciseTypeItem.exerciseImage).into(binding.imageView)
+            //Picasso.get().load(exerciseTypeItem.exerciseImage).into(binding.imageView)
             binding.MuscleName.text = exerciseTypeItem.exerciseName
             itemView.setOnClickListener {
                 listener.obClick(exerciseTypeItem)

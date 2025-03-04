@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="450dp"
     android:layout_height="300dp">
 
@@ -12,16 +11,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:cardBackgroundColor="@color/invisible"
-        app:cardCornerRadius="25dp"
+        app:cardBackgroundColor="@color/darkBlue"
+        app:cardCornerRadius="50dp"
         android:layout_marginTop="15dp">
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="400dp"
-            android:layout_height="252dp"
-            app:srcCompat="@drawable/chest"
-            android:layout_gravity="center"/>
 
         <TextView
             android:layout_marginLeft="5dp"
@@ -29,12 +21,14 @@
             android:id="@+id/MuscleName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/back_gray"
+            android:background="@color/darkBlue"
             android:text="TextView"
             android:textColor="@color/white"
             android:textSize="30dp"
-            android:layout_gravity="bottom"
+            android:layout_gravity="center"
             android:gravity="center"/>
+
+
     </androidx.cardview.widget.CardView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
