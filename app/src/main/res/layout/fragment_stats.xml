@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="presentation.StatsFragment.StatsFragment">
 
     <LinearLayout
@@ -37,14 +38,15 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="400dp"
-            android:layout_height="600dp"
+            android:layout_height="250dp"
             android:layout_gravity="center"
-            android:layout_marginTop="30dp">
+            android:layout_marginTop="30dp"
+            app:cardBackgroundColor="@color/invisible">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/statsHistory_holder"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="250dp"
                 android:orientation="horizontal"/>
         </androidx.cardview.widget.CardView>
 
@@ -54,6 +56,8 @@
             android:layout_height="wrap_content"
             android:text="@string/back"
             android:layout_gravity="center"
-            android:layout_marginTop="30dp"/>
+            android:layout_marginTop="30dp"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white"/>
     </LinearLayout>
 </FrameLayout>

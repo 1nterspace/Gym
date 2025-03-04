@@ -53,7 +53,6 @@ class MuscleMenuFragment : Fragment(), MuscleTypeRWAdapter.Listener {
         CoroutineScope(Dispatchers.IO).launch {
             dataModel.getExerciseTypeMenu(muscleTypeItem.muscleName)
         }
-        Toast.makeText(requireContext(),"Muscle",Toast.LENGTH_LONG).show()
         dataModel.activeFragmentValue.value = 2
     }
 

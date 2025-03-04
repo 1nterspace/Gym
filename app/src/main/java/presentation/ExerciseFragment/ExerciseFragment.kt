@@ -52,7 +52,6 @@ class ExerciseFragment : Fragment(), ExerciseTypeRWAdapter.Listener {
     }
 
     override fun obClick(exerciseTypeItem: ExerciseTypeItem) {
-        Toast.makeText(requireContext(),"Exercise", Toast.LENGTH_LONG).show()
         dataModel.activeFragmentValue.value = 3
         dataModel.exerciseName.value = exerciseTypeItem.exerciseName
     }

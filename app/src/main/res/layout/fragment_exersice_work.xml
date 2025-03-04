@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="presentation.WorkFragment.ExersiceWorkFragment">
 
     <LinearLayout
@@ -11,7 +12,8 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="100dp" >
+            android:layout_height="100dp"
+            app:cardBackgroundColor="@color/invisible">
 
             <TextView
                 android:id="@+id/textNameOfExercise"
@@ -31,7 +33,8 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="10dp"
+                app:cardBackgroundColor="@color/invisible">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -58,7 +61,8 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="10dp"
+                app:cardBackgroundColor="@color/invisible">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -120,7 +124,8 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="10dp"
+                app:cardBackgroundColor="@color/invisible">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -182,7 +187,8 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="10dp"
+                app:cardBackgroundColor="@color/invisible">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -244,7 +250,8 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="10dp"
+                app:cardBackgroundColor="@color/invisible">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -316,7 +323,8 @@
                 android:text="@string/save"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/background_cardwiew"/>
+                android:backgroundTint="@color/orange"
+                android:textColor="@color/white"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonGetStats"
@@ -325,13 +333,15 @@
                 android:text="@string/stats"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/background_cardwiew"/>
+                android:backgroundTint="@color/orange"
+                android:textColor="@color/white"/>
 
             <Button
                 android:id="@+id/buttonBack"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/background_cardwiew"
+                android:backgroundTint="@color/black"
+                android:textColor="@color/white"
                 android:text="@string/back"
                 android:layout_gravity="center"
                 android:layout_marginTop="30dp"/>
