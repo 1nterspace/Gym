@@ -7,9 +7,9 @@ import androidx.room.PrimaryKey
 @Entity("MuscleTypes")
 data class MuscleTypeItem(
     @PrimaryKey(autoGenerate = true)
-    var id:Int? = null,
+    var id: Int? = null,
     @ColumnInfo(name = "muscleName")
-    var muscleName:String,
+    var muscleName: String,
     @ColumnInfo(name = "muscleImage")
-    val muscleImage:Int
+    val muscleImage: Int
 )

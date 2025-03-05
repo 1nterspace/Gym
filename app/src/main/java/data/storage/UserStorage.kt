@@ -6,12 +6,12 @@ import domain.models.MuscleTypeItem
 
 interface UserStorage {
 
-    suspend fun getMuscleMenu():List<MuscleTypeItem>
+    suspend fun getMuscleMenu(): List<MuscleTypeItem>
 
-    suspend fun getExerciseMenu(muscleName:String):List<ExerciseTypeItem>
+    suspend fun getExerciseMenu(muscleName: String): List<ExerciseTypeItem>
 
     fun saveExerciseStats(exerciseStatItem: ExerciseStatItem)
 
-    fun getExerciseStats(exerciseName:String): List<ExerciseStatItem>
+    fun getExerciseStats(exerciseName: String): List<ExerciseStatItem>
 
 }

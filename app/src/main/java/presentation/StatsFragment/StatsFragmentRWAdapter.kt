@@ -10,22 +10,29 @@ import com.example.gymlogictest.R
 import com.example.gymlogictest.databinding.StatsHistoryCardBinding
 import domain.models.ExerciseStatItem
 
-class StatsFragmentRWAdapter:ListAdapter<ExerciseStatItem, StatsFragmentRWAdapter.StatsViewHolder>(Comparator()) {
+class StatsFragmentRWAdapter :
+    ListAdapter<ExerciseStatItem, StatsFragmentRWAdapter.StatsViewHolder>(Comparator()) {
 
     class Comparator : DiffUtil.ItemCallback<ExerciseStatItem>() {
-        override fun areItemsTheSame(oldItem: ExerciseStatItem, newItem: ExerciseStatItem): Boolean {
+        override fun areItemsTheSame(
+            oldItem: ExerciseStatItem,
+            newItem: ExerciseStatItem
+        ): Boolean {
             return oldItem.data == newItem.data
         }
 
-        override fun areContentsTheSame(oldItem: ExerciseStatItem, newItem: ExerciseStatItem): Boolean {
+        override fun areContentsTheSame(
+            oldItem: ExerciseStatItem,
+            newItem: ExerciseStatItem
+        ): Boolean {
             return oldItem == newItem
         }
 
     }
 
-    class StatsViewHolder(view: View):RecyclerView.ViewHolder(view){
+    class StatsViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         private val binding = StatsHistoryCardBinding.bind(itemView)
-        fun bind(exerciseStatItem: ExerciseStatItem){
+        fun bind(exerciseStatItem: ExerciseStatItem) {
             binding.textData.text = exerciseStatItem.data
 
             binding.textFirstRepKg.text = exerciseStatItem.firstRepKg.toString()
@@ -44,7 +51,7 @@ class StatsFragmentRWAdapter:ListAdapter<ExerciseStatItem, StatsFragmentRWAdapte
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StatsViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(
-            R.layout.stats_history_card,parent,false
+            R.layout.stats_history_card, parent, false
         )
         return StatsViewHolder(view)
     }

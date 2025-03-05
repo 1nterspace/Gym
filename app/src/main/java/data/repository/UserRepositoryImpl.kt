@@ -7,14 +7,14 @@ import domain.models.ExerciseTypeItem
 import domain.models.MuscleTypeItem
 import domain.repository.UserRepository
 
-class UserRepositoryImpl(private val userStorage: UserStorage):UserRepository {
+class UserRepositoryImpl(private val userStorage: UserStorage) : UserRepository {
 
     override suspend fun getMuscleMenu(): List<MuscleTypeItem> {
-        Log.d("FixRoad","UserRepositoryIml Create")
+        Log.d("FixRoad", "UserRepositoryIml Create")
         return userStorage.getMuscleMenu()
     }
 
-    override suspend fun getExerciseMenu(muscleName:String): List<ExerciseTypeItem> {
+    override suspend fun getExerciseMenu(muscleName: String): List<ExerciseTypeItem> {
         return userStorage.getExerciseMenu(muscleName)
     }
 
@@ -22,7 +22,7 @@ class UserRepositoryImpl(private val userStorage: UserStorage):UserRepository {
         return userStorage.saveExerciseStats(exerciseStatItem)
     }
 
-    override fun getExerciseStats(exerciseName:String): List<ExerciseStatItem> {
+    override fun getExerciseStats(exerciseName: String): List<ExerciseStatItem> {
         return userStorage.getExerciseStats(exerciseName)
     }
 

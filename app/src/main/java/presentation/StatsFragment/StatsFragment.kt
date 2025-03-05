@@ -1,10 +1,10 @@
 package presentation.StatsFragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.gymlogictest.databinding.FragmentStatsBinding
@@ -15,7 +15,7 @@ import presentation.DataModel
 class StatsFragment : Fragment() {
 
     lateinit var binding: FragmentStatsBinding
-    private lateinit var adapter:StatsFragmentRWAdapter
+    private lateinit var adapter: StatsFragmentRWAdapter
     private val dataModel: DataModel by activityViewModel()
 
     override fun onCreateView(
@@ -30,7 +30,8 @@ class StatsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         adapter = StatsFragmentRWAdapter()
         binding.statsHistoryHolder.adapter = adapter
-        binding.statsHistoryHolder.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,true)
+        binding.statsHistoryHolder.layoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, true)
         binding.textExerciseName.text = dataModel.exerciseName.value
         binding.buttonBack.setOnClickListener {
             dataModel.activeFragmentValue.value = 3

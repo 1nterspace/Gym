@@ -54,28 +54,28 @@ class ExersiceWorkFragment : Fragment() {
         binding.editTextData.setText(formattedDate.toString())
 
         binding.buttonSave.setOnClickListener {
-        // Получаем данные из EditText
-        val firstRepKg = binding.editTextFirstRepKg.text.toString().toIntOrNull() ?: 0
-        val firstRepCount = binding.editTextFirstRepCount.text.toString().toIntOrNull() ?: 0
+            // Получаем данные из EditText
+            val firstRepKg = binding.editTextFirstRepKg.text.toString().toIntOrNull() ?: 0
+            val firstRepCount = binding.editTextFirstRepCount.text.toString().toIntOrNull() ?: 0
 
-        val secondRepKg = binding.editTextSecondRepKg.text.toString().toIntOrNull() ?: 0
-        val secondRepCount = binding.editTextSecondRepCount.text.toString().toIntOrNull() ?: 0
+            val secondRepKg = binding.editTextSecondRepKg.text.toString().toIntOrNull() ?: 0
+            val secondRepCount = binding.editTextSecondRepCount.text.toString().toIntOrNull() ?: 0
 
-        val thirdRepKg = binding.editTextThirdRepKg.text.toString().toIntOrNull() ?: 0
-        val thirdRepCount = binding.editTextThirdRepCount.text.toString().toIntOrNull() ?: 0
+            val thirdRepKg = binding.editTextThirdRepKg.text.toString().toIntOrNull() ?: 0
+            val thirdRepCount = binding.editTextThirdRepCount.text.toString().toIntOrNull() ?: 0
 
-        val fourthRepKg = binding.editTextFourthRepKg.text.toString().toIntOrNull() ?: 0
-        val fourthRepCount = binding.editTextFourthRepCount.text.toString().toIntOrNull() ?: 0
+            val fourthRepKg = binding.editTextFourthRepKg.text.toString().toIntOrNull() ?: 0
+            val fourthRepCount = binding.editTextFourthRepCount.text.toString().toIntOrNull() ?: 0
 
-        // Проверяем, что все поля заполнены
-        if (firstRepKg == 0 || firstRepCount == 0 ||
-            secondRepKg == 0 || secondRepCount == 0 ||
-            thirdRepKg == 0 || thirdRepCount == 0 ||
-            fourthRepKg == 0 || fourthRepCount == 0
-        ) {
-            Toast.makeText(requireContext(), "Заполните все поля", Toast.LENGTH_SHORT).show()
-            return@setOnClickListener
-        }
+            // Проверяем, что все поля заполнены
+            if (firstRepKg == 0 || firstRepCount == 0 ||
+                secondRepKg == 0 || secondRepCount == 0 ||
+                thirdRepKg == 0 || thirdRepCount == 0 ||
+                fourthRepKg == 0 || fourthRepCount == 0
+            ) {
+                Toast.makeText(requireContext(), "Заполните все поля", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
 
             val exerciseStatItem = ExerciseStatItem(
                 exerciseName = dataModel.exerciseName.value ?: "Unknown Exercise",
@@ -89,8 +89,9 @@ class ExersiceWorkFragment : Fragment() {
                 forthRepKg = fourthRepKg.toString(),
                 forthRepCount = fourthRepCount.toString()
             )
-        CoroutineScope(Dispatchers.IO).launch {
-            exerciseStatsDb.getDao().insertExerciseStat(exerciseStatItem)
+            CoroutineScope(Dispatchers.IO).launch {
+                exerciseStatsDb.getDao().insertExerciseStat(exerciseStatItem)
+                //dataModel.saveExerciseStats(exerciseStatItem)
             }
         }
     }

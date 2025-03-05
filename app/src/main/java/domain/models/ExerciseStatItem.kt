@@ -7,31 +7,31 @@ import androidx.room.PrimaryKey
 @Entity("ExerciseStats")
 data class ExerciseStatItem(
     @PrimaryKey(autoGenerate = true)
-    val id:Int? = null,
+    val id: Int? = null,
     @ColumnInfo(name = "exerciseName")
-    val exerciseName:String,
+    val exerciseName: String,
     @ColumnInfo(name = "data")
-    val data:String,
+    val data: String,
 
     @ColumnInfo(name = "firstRepKg")
-    val firstRepKg:String,
+    val firstRepKg: String,
     @ColumnInfo(name = "firstRepCount")
-    val firstRepCount:String,
+    val firstRepCount: String,
 
     @ColumnInfo(name = "secondRepKg")
-    val secondRepKg:String,
+    val secondRepKg: String,
     @ColumnInfo(name = "secondRepCount")
-    val secondRepCount:String,
+    val secondRepCount: String,
 
     @ColumnInfo(name = "thirdRepKg")
-    val thirdRepKg:String,
+    val thirdRepKg: String,
     @ColumnInfo(name = "thirdRepCount")
-    val thirdRepCount:String,
+    val thirdRepCount: String,
 
     @ColumnInfo(name = "forthRepKg")
-    val forthRepKg:String,
+    val forthRepKg: String,
     @ColumnInfo(name = "forthRepCount")
-    val forthRepCount:String,
+    val forthRepCount: String,
 
 
-)
+    )

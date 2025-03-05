@@ -9,9 +9,9 @@ import domain.models.MuscleTypeItem
 interface MuscleDao {
 
     @Insert
-    fun insertMuscleItem(item:MuscleTypeItem)
+    fun insertMuscleItem(item: MuscleTypeItem)
 
     @Query("SELECT * FROM muscletypes")
-    fun getAllMuscleItems():List<MuscleTypeItem>
+    fun getAllMuscleItems(): List<MuscleTypeItem>
 
 }

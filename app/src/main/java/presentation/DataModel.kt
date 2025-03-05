@@ -18,16 +18,13 @@ class DataModel(
     private val getExerciseMenuUseCase: GetExerciseMenuUseCase,
     private val saveExerciseStatsUseCase: SaveExerciseStatsUseCase,
     private val getExerciseStatsUseCase: GetExerciseStatsUseCase
-    ): ViewModel() {
-    init {
-        Log.d("FixRoad", "VM created")
-    }
+) : ViewModel() {
 
     val activeFragmentValue = MutableLiveData<Int>()
 
     val exerciseName = MutableLiveData<String>()
 
-     val muscleTypeItemsList = MutableLiveData<List<MuscleTypeItem>>()
+    val muscleTypeItemsList = MutableLiveData<List<MuscleTypeItem>>()
 
     suspend fun getMuscleTypeMenu() {
         val muscleTypeList = getMuscleMenuUseCase.execute()
@@ -40,8 +37,11 @@ class DataModel(
 
     val exerciseTypeItemsList = MutableLiveData<List<ExerciseTypeItem>>()
 
-    suspend fun getExerciseTypeMenu(muscleName:String){
-        Log.d("FixRoad", "Data exercise loaded: ${getExerciseMenuUseCase.execute(muscleName).size} items")
+    suspend fun getExerciseTypeMenu(muscleName: String) {
+        Log.d(
+            "FixRoad",
+            "Data exercise loaded: ${getExerciseMenuUseCase.execute(muscleName).size} items"
+        )
         val exerciseList = withContext(Dispatchers.IO) {
             getExerciseMenuUseCase.execute(muscleName)
         }
@@ -53,13 +53,19 @@ class DataModel(
 
     val exerciseItemsStatsList = MutableLiveData<List<ExerciseStatItem>>()
 
-    suspend fun getExerciseStats(exerciseName:String){
+    suspend fun getExerciseStats(exerciseName: String) {
         val exerciseStatsList = withContext(Dispatchers.IO) {
             getExerciseStatsUseCase.execute(exerciseName)
         }
         withContext(Dispatchers.Main) {
             exerciseItemsStatsList.value = exerciseStatsList
             Log.d("FixRoad", "exerciseItemsStatsList: ${exerciseTypeItemsList.value} items")
+        }
+    }
+
+    suspend fun saveExerciseStats(exerciseStatItem: ExerciseStatItem) {
+        withContext(Dispatchers.IO) {
+            saveExerciseStatsUseCase.execute(exerciseStatItem)
         }
     }
 

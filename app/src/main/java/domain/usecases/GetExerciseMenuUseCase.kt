@@ -5,7 +5,7 @@ import domain.repository.UserRepository
 
 class GetExerciseMenuUseCase(private val userRepository: UserRepository) {
 
-    suspend fun execute(muscleName:String):List<ExerciseTypeItem>{
+    suspend fun execute(muscleName: String): List<ExerciseTypeItem> {
         return userRepository.getExerciseMenu(muscleName)
     }
 

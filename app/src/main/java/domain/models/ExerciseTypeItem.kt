@@ -8,11 +8,11 @@ import androidx.room.PrimaryKey
 @Entity("ExerciseTypes")
 data class ExerciseTypeItem(
     @PrimaryKey(autoGenerate = true)
-    var id:Int? = null,
+    var id: Int? = null,
     @ColumnInfo(name = "muscleName")
-    val muscleType:String,
+    val muscleType: String,
     @ColumnInfo(name = "exerciseName")
-    val exerciseName:String,
+    val exerciseName: String,
     @ColumnInfo(name = "ExerciseImage")
-    val exerciseImage:Int
+    val exerciseImage: Int
 )

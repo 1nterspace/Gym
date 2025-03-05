@@ -5,7 +5,7 @@ import domain.repository.UserRepository
 
 class GetExerciseStatsUseCase(private val userRepository: UserRepository) {
 
-    fun execute(exerciseName:String): List<ExerciseStatItem> {
+    fun execute(exerciseName: String): List<ExerciseStatItem> {
         return userRepository.getExerciseStats(exerciseName)
     }
 

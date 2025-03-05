@@ -12,7 +12,7 @@ interface ExerciseStatsDao {
     fun insertExerciseStat(exerciseStatItem: ExerciseStatItem)
 
     @Query("SELECT * FROM exercisestats WHERE exerciseName = :exerciseName")
-    fun getExerciseStatsByExerciseName(exerciseName:String):List<ExerciseStatItem>
+    fun getExerciseStatsByExerciseName(exerciseName: String): List<ExerciseStatItem>
 
     @Query("DELETE FROM ExerciseStats") // Удаление всех записей из таблицы
     suspend fun deleteAll()

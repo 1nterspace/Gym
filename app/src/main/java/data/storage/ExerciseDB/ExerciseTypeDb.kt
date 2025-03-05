@@ -7,9 +7,10 @@ import androidx.room.RoomDatabase
 import domain.models.ExerciseTypeItem
 
 @Database(entities = [ExerciseTypeItem::class], version = 1)
-abstract class ExerciseTypeDb:RoomDatabase() {
-abstract fun getDao(): ExerciseDao
-    companion object{
+abstract class ExerciseTypeDb : RoomDatabase() {
+    abstract fun getDao(): ExerciseDao
+
+    companion object {
 
         fun getExerciseTypeDb(context: Context): ExerciseTypeDb {
             return Room.databaseBuilder(
